@@ -26,7 +26,9 @@
 		</tr>
 		<c:forEach var="d" items="${list }">
 			<tr>
-				<td>${d.id }</td> <td>${d.pwd }</td> <td>${d.name }</td> <td>${d.addr }</td>
+				<td>
+				<a href="${contextPath }/member/member_info.jsp?id=${d.id}">${d.id }</a> <!-- 여기서 찾고 싶은 아이디에 a태그를 걸어서 주소값 뒤에 파라미터 값을 담아서 넘겨줍니다. -->
+				</td> <td>${d.pwd }</td> <td>${d.name }</td> <td>${d.addr }</td>
 			</tr>
 		</c:forEach>
 		<tr>

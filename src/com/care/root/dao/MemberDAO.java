@@ -70,4 +70,27 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
+	public MemberDTO memberInfo(String id) {
+		String sql = "select * from member_jsp where id=?";
+		MemberDTO dto = null;
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				dto = new MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setName(rs.getString("name"));
+				dto.setAddr(rs.getString("addr"));
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
+	}
 }
