@@ -18,6 +18,7 @@
 	<jsp:include page="../default/header.jsp"/>
 	
 	<form action="${contextPath }/member/modift_insert.jsp">
+	<input type="hidden" name="id" value="${mem.id }">
 		<input type="text" name="id" value="${mem.id }" readonly> <br>
 		<input type="password" name="pwd"> <br>
 		<input type="text" name="name" value="${mem.name }"> <br>

@@ -93,4 +93,22 @@ public class MemberDAO {
 		}
 		return dto;
 	}
+	public void modify(MemberDTO dto) {
+		String sql = "update member_jsp set pw=?, name=?, addr=? where id=?";
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getPwd());
+			ps.setString(2, dto.getName());
+			ps.setString(3, dto.getAddr());
+			ps.setString(4, dto.getId());
+			ps.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 }
